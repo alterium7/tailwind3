@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/style.css" rel="stylesheet">
+  <link href="../dist/skitter.styles.css" rel="stylesheet">
+  <link href="../dist/rslides.css" rel="stylesheet">
+  <link href="../dist/hamburgers.css" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/rslides.css">
+	<link rel="stylesheet" href="../dist/font-awesome.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&display=swap');
+
+    *, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; image-rendering: -webkit-optimize-contrast;}
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline; -webkit-text-size-adjust: 100%;}
+
+    /* HTML5 display-role reset for older browsers */
+
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {display: block;}
+    body {line-height: 1;}
+    ul {list-style: none;}
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after,
+    q:before, q:after {content: '';content: none;}
+    table {border-collapse: collapse;border-spacing: 0;}
+    button, html input[type=button], input[type=reset], input[type=submit] { cursor: pointer; }
+    input:not([type='radio']):not([type='checkbox']), textarea
+    form, label {-webkit-text-size-adjust: 100%;}
+    mark {background-color: transparent;color:inherit;}
+
+    .toggle_right_cont {visibility: visible;background: rgba(0,0,0,0.9);}
+
+    /*Burger Color*/
+    .nav_toggle_button .toggle_holder{position: absolute;top: 60%;right: 0;transform: translateY(-50%);}
+    .nav_toggle_button .hamburger{}
+    .nav_toggle_button .hamburger-inner, .nav_toggle_button .hamburger-inner:before, .nav_toggle_button .hamburger-inner:after{background:#fff;}
+    .nav_toggle_button small{text-transform:uppercase;font-weight:bold;font-size:13px;color:#fff;display:block; text-align: center;}
+
+    /* Default Responsive Style for Toggle Swipe Right */
+    .menu_slide_right {display: none;}
+
+    /*Responsive burger and color*/
+    .menu_slide_right .hamburger-inner, .menu_slide_right .hamburger-inner:before, .menu_slide_right .hamburger-inner:after{background:#000;}
+    .menu_slide_right .toggle_holder{position: absolute;top: 55%;right: 10px;transform: translateY(-50%);}
+    .menu_slide_right small{text-transform:uppercase;color:#000;font-weight:bold;font-size:13px;display:block; text-align: center;}
+
+    /*end nav*/
+
+    /* end reset */
+  </style>
+
+  <title>SAMPLE TAILWIND SITE</title>
+</head>
+<body class="overflow-x-hidden ">
+  
+  <header class="header border-t-bluecolor border-x-0 border-b-0 border-[14px] border-solid mobile:border-0">
+    <div class="wrapper w-[100%] block text-center max-w-[1375px] mx-[auto] my-[0]">
+      <div class="header_con min-h-[109px] desktop4:px-[20px] mobile:py-[20px] mobile:min-h-0">
+        <div class="main_logo float-left mt-[28px] mobile:w-[50%%] mobile:max-w-[300px] mobile:mt-0 mobile:float-none mobile:block w-[68%]">
+          <a href="#"><img src="../images/main-logo.png" alt="company logo"></a>
+        </div>
+        <div class="header_info float-right mt-[24px] mobile:float-none mobile:w-full mobile:p-20px mobile:mt-[0] mobile:min-h-0">
+          <h2 class="relative pl-[58px] font-Poppins text-[20px] before:absolute before:bg-hdr-icon before:w-[40px] before:h-[51px] before:content-[''] before:top-0 before:left-0 mobile:p-0 mobile:text-center mobile:before:hidden">Call Us Today! <span class="block mt-[9px]"><mark>360-921-9868</mark></span></h2>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- <div class="navigation bg-bluecolor">
+      <div class="wrapper w-[100%] block text-center max-w-[1375px] mx-[auto] my-[0] min-h-[60px]">
+        <ul class="ftr_nav py-30px flex flex-wrap align-middle justify-between font-Poppins text-[20px] text-whitecolor responsivestart:justify-center desktop4:px-[20px] responsivestart:p-[30px]">
+          <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Home</a></li>
+          <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">About Us</a></li>
+          <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Services</a></li>
+          <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Careers</a></li>
+          <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Contact Us</a></li>
+        </ul>
+    </div>
+  </div> -->
+
+
+
+<div class="nav_area relative z-[9999] mobile:bg-yellowcolor mobile:py-[40px] mobile:px-[30px]">
+    <div class="nav_toggle_button mobile:block mobile:relative">
+      <div class="logo_wrap"></div>
+        <div class="toggle_holder invisible mobile:visible">
+          <div class="hamburger hamburger--spin-r">
+            <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+            </div>
+          </div>
+          <small class="font-Poppins mt-[5px]">Menu</small>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+
+    <div class="toggle_right_nav mobile:fixed mobile:top-0 mobile:left-0 mobile:right-0 mobile:w-full mobile:h-full mobile:z-[100000] mobile:invisible mobile:transition-all-[0.7s]-ease;">
+      <nav class="page_nav bg-bluecolor">
+        <div class="menu_slide_right
+        block text-left px-[20px] py-[10px] bg-whitecolor relative
+        mobile:block mobile:text-left mobile:py-[20px] mobile:px-[10px] mobile:bg-whitecolor mobile:relative">
+          <a href="#" class="logo_slide_right mobile:block mobile:float-left mobile:w-[calc(100%-90px)]"><figure><img src="../images/main-logo.png" alt="company logo"/></figure></a>
+          <div class="toggle_holder">
+            <div class="hamburger hamburger--spin-r">
+              <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <small>Close</small>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="wrapper w-[100%] block text-center max-w-[1375px] mx-[auto] my-[0]">
+          <ul class="ftr_nav py-30px flex flex-wrap align-middle justify-between font-Poppins text-[20px] text-whitecolor responsivestart:justify-center desktop4:px-[20px] responsivestart:p-[30px]">
+            <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Home</a></li>
+            <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">About Us</a></li>
+            <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Services</a></li>
+            <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Careers</a></li>
+            <li class="uppercase text-whitecolor hover:underline leading-[60px] responsivestart:leading-[100%] responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="toggle_nav_close mobile:absolute  mobile:top-0  mobile:left-0 mobile:w-full mobile:h-full mobile:z-[2]"></div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="banner relative before:absolute before:w-[100%] before:h-[100%] before:content-[''] before:top-0 before:left-0 before:right-0 before:bg-blackcolor/[.5] before:z-[99] responsivestart:before:hidden" >
+      <div class="wrapper w-[100%] block text-center max-w-[1400px] mx-[auto] my-[0]">
+        <div class="bnr_con relative">
+          <div class="slider w-[1920px] mx-[auto] my-[0] ml-[-260px] relative block responsivestart:ml-[-29%] responsivestart:w-[150%]
+          desktop3:ml-[-408px]">
+            <div class="box_skitter box_skitter_large responsivestart:hidden">
+              <ul>
+                <li><img src="../images/1.jpg" alt="ptriber ningkamot pamicture para dili ma kick out" class="random"/></li>
+                <li><img src="../images/2.jpg" alt="drone sanaol" class="random"/></li>
+                <li><img src="../images/2.jpg" alt="thallasophobic image" class="random"/></li>
+                <li><img src="../images/2.jpg" alt="drone flying" class="random"/></li>
+              </ul>
+            </div>
+            <ul class="rslides hidden responsivestart:block">
+              <li><img src="../images/1.jpg" alt="ptriber ningkamot pamicture para dili ma kick out" class="random"/></li>
+              <li><img src="../images/2.jpg" alt="drone sanaol" class="random"/></li>
+              <li><img src="../images/2.jpg" alt="thallasophobic image" class="random"/></li>
+              <li><img src="../images/2.jpg" alt="drone flying" class="random"/></li>
+            </ul>
+          </div>
+
+          <div class="bnr_info responsivestart:animate-none z-[99] absolute left-[0] right-[0] w-[100%] mx-[auto] my-[0] bg-blackbg/[.5] text-center text-whitecolor translate-y-[-50%] top-[50%] min-h-[240px]
+          responsivestart:relative responsivestart:bottom-0 responsivestart:p-20px responsivestart:border-b-2 responsivestart:border-solid responsivestart:border-blackbg
+          responsivestart:bg-bluecolor responsivestart:top-0 responsivestart:translate-y-0 responsivestart:p-[20px]">
+            <h2 class="font-Frank text-[50px] mb-[40px] uppercase mobile:text-[36px] mobile:mb-[20px]">Custom Slogan Goes Here</h2>
+            <p class="font-Poppins text-[18px] max-w-[652px] w-[100%] mb-[50px] mx-auto leading-[25px] mobile:mb-[20px]">Words shown on this layout are placeholders. This space is reserved for more details about the company.</p>
+            <a href="javascript:;" class="font-Poppins text-[18px] bg-yellowcolor border-solid border-2 border-yellowcolor hover:bg-bluecolor text-whitecolor py-[30px] px-[15px] block w-[100%] max-w-[233px] mx-auto">Learn More About Us</a>
+          </div>
+
+          <div class="mobi_ban hidden">
+            <img src="../images/1.jpg" alt="nurse nga parehag nawong sa akong ante" class="random"/>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+  <div class="bottom1 relateive z-[99999] animatedparent">
+    <div class="wrapper w-[100%] block text-center max-w-[1400px] mx-[auto] my-[0]">
+      <div class="btm1_con min-h-[786px] py-[80px] desktop4:px-[20px] responsivestart:py-[20px] responsivestart:min-h-0">
+        <h2 class="btm1hdr font-Frank text-[50px] pb-[80px] responsivestart:text-[38px] responsivestart:pb-[20px]">
+          Gallery
+        </h2>
+        <div class="btm1_boxes_con ">
+          <ul class="flex flex-wrap align-middle justify-between mobile:justify-evenly">
+            <li class="desktop5:w-[32%] mobile:w-[48%] mobile:mb-[5px] animatedchild1"><img src="../images/btm1-img1.jpg" alt="beatch"></li>
+            <li class="desktop5:w-[32%] mobile:w-[48%] mobile:mb-[5px] animatedchild2"><img src="../images/btm1-img2.jpg" alt="drone over the rainbow"></li>
+            <li class="desktop5:w-[32%] mobile:w-[48%] mobile:mb-[5px] animatedchild3"><img src="../images/btm1-img3.jpg" alt="alien world beatch"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer bg-bluecolor">
+    <div class="wrapper w-[100%] block text-center max-w-[1400px] mx-[auto] my-[0]">
+      <div class="ftr_con min-h-[555px] desktop5:px-[20px] responsivestart:p-[20px] responsivestart:py-[30px] responsivestart:min-h-0">
+        <div class="ftr_top pb-[100px] responsivestart:pb-[30px]">
+          <div class="ft_logo float-right mr-[100px] mt-[145px] desktop5:mr-[50px] desktop3:mr-0 responsivestart:block responsivestart:text-center responsivestart:w-full responsivestart:mt-0">
+            <a href="#" class="responsivestart:max-w-[345px] responsivestart:w-full responsivestart:block responsivestart:my-0 responsivestart:mx-auto"><figure><img src="../images/ftr-logo.png" alt="company logo"></figure></a>
+          </div>
+          <ul class="contact_info whitespace-pre-line text-whitecolor font-Poppins text-[17px] flex flex-wrap float-left mt-[100px] justify-between w-[100%] max-w-[705px] text-left desktop2:max-w-[552px] desktop2:w-[56%] responsivestart:w-full responsivestart:max-w-full responsivestart:mt-[30px] responsivestart:justify-center">
+            <li class="leading-[24px] responsivestart:mx-[15px] responsivestart:text-center">
+              <h2 class="leading-[100%] font-Frank font-bold text-[24px] text-yellowcolor">Contact Information</h2>
+              Service Areas Covered:
+              All over the globe
+            </li>
+            <li class="leading-[24px] responsivestart:mx-[15px] responsivestart:text-center">
+              <h2 class="leading-[100%] font-Frank font-bold text-[24px] text-yellowcolor">Call Us or Message Us</h2>
+              Phone Number: <mark>360-921-9868</mark>
+              Email: <a href="mailto:skyguidellc@gmail.com" class="hover:underline">skyguidellc@gmail.com</a>
+            </li>
+          </ul>
+          
+          <div class="clearfix clear-both overflow-hidden"></div>
+        </div>
+        <div class="ftr_bottom block border-t-[1px] border-solid border-whitecolor relative before:absolute before:content-[''] before:top-[-1px] before:w-[270px] before:left-[-270px] before:h-full before:border-t-[1px] before:border-whitecolor after:absolute after:content-[''] after:top-[-1px] after:w-[270px] after:right-[-270px] after:h-full after:border-t-[1px] after:border-whitecolor">
+          <ul class="ftr_nav py-30px flex flex-wrap align-middle justify-between font-Poppins text-[20px] text-whitecolor pt-[50px] responsivestart:justify-center responsivestart:pt-[30px]">
+            <li class="uppercase text-whitecolor hover:underline responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Home</a></li>
+            <li class="uppercase text-whitecolor hover:underline responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">About Us</a></li>
+            <li class="uppercase text-whitecolor hover:underline responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Services</a></li>
+            <li class="uppercase text-whitecolor hover:underline responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Careers</a></li>
+            <li class="uppercase text-whitecolor hover:underline responsivestart:w-[30%] responsivestart:border-[1px] responsivestart:p-[15px] responsivestart:mx-[10px] responsivestart:my-[5px] responsivestart:border-whitecolor responsivestart:hover:bg-whitecolor responsivestart:hover:text-bluecolor responsivestart:border-solid mobile:w-[45%] mobilesm:w-full mobilesm:mx-[0] mobilesm:my-[5px]"><a href="javascript:;">Contact Us</a></li>
+          </ul>
+          <div class="copyright text-whitecolor font-Poppins text-[18px] pt-[50px] leading-[100%] responsivestart:pt-[40px]">
+            &copy; Copyright
+						<!-- <?php
+						$start_year = '2022';
+						$current_year = date('Y');
+						$copyright = ($current_year == $start_year) ? $start_year : $start_year.' - '.$current_year;
+						echo $copyright;
+						?> -->
+				  <small class="text-[18px] px-[10px] mx-[10px] relative before:content-[''] before:block before:absolute before:top-[10px] before:rounded-full before:bg-whitecolor before:left-[-3px] before:w-[5px] before:h-[5px] after:block after:absolute after:top-[10px] after:rounded-full after:bg-whitecolor after:right-[-3px] after:w-[5px] after:h-[5px] mobile:block mobile:w-full mobile:my-2 mobile:mx-0 mobile:before:hidden mobile:after:hidden">Skyguide LLC</small> <span class="copyright_text ">Design by</span> <a href="http://proweaver.com" class="hover:underline" target="_blank" rel="nofollow">Proweaver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="back_top"></span>
+
+    </div> <!-- End Clearfix -->
+    </div> <!-- End Protect Me -->
+
+    <!--?php get_includes('ie');?-->
+
+    <!--
+    Solved HTML5 & CSS IE Issues
+    -->
+    <script src="../js/modernizr-custom-v2.7.1.min.js"></script>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+
+    <!--
+    Solved Psuedo Elements IE Issues
+    -->
+    <!-- <script src="../js/calcheight.js"></script> -->
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.skitter.min.js"></script> 
+    <script src="../js/responsiveslides.min.js"></script>
+    <script src="../js/plugins.js"></script>
+
+    <!--?php wp_footer(); ?-->
+
+
+</body>
+</html>
